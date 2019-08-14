@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class CP_Feed_IndexController extends Mage_Core_Controller_Front_Action
+class Cp_Feed_IndexController extends Mage_Core_Controller_Front_Action
 {
     
     public function indexAction()

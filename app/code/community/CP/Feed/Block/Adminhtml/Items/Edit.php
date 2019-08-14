@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class CP_Feed_Block_Adminhtml_Items_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
+class Cp_Feed_Block_Adminhtml_Items_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
 {
     
     public function __construct()
@@ -103,7 +103,7 @@ class CP_Feed_Block_Adminhtml_Items_Edit extends Mage_Adminhtml_Block_Widget_For
         
         $_data = array();
         
-        $_data['data'] = CP_Feed_Block_Adminhtml_Items_Edit_Tab_Content_Csv::getSystemSections();
+        $_data['data'] = Cp_Feed_Block_Adminhtml_Items_Edit_Tab_Content_Csv::getSystemSections();
         
         $_data['url'] = $this->getUrl('*/*/mappingimportsection', array(
             'id' => ($feed && $feed->getId() ? $feed->getId() : 0)
@@ -121,7 +121,7 @@ class CP_Feed_Block_Adminhtml_Items_Edit extends Mage_Adminhtml_Block_Widget_For
 
             
 
-            var CPFeedAdmin = new CPFeedAdminSettings(" . Zend_Json::encode($_data) . ");
+            var CpFeedAdmin = new CpFeedAdminSettings(" . Zend_Json::encode($_data) . ");
 
 
 

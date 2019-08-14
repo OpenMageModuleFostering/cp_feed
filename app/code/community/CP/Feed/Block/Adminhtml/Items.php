@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class CP_Feed_Block_Adminhtml_Items extends Mage_Adminhtml_Block_Widget_Grid_Container
+class Cp_Feed_Block_Adminhtml_Items extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
     public function __construct()
     {

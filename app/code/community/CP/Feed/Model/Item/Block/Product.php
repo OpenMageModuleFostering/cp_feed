@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
  
-class CP_Feed_Model_Item_Block_Product extends CP_Feed_Model_Item_Block
+class Cp_Feed_Model_Item_Block_Product extends Cp_Feed_Model_Item_Block
 {
     public function writeTempFile($curr_page = 0, $length = 50, $filename = '')
     {

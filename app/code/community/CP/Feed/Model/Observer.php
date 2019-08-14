@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
  
-class CP_Feed_Model_Observer extends Mage_Cron_Model_Observer
+class Cp_Feed_Model_Observer extends Mage_Cron_Model_Observer
 {
     protected function _isWrongTimeStamp(){
         $write = Mage::getSingleton('core/resource')->getConnection('core_write');
@@ -35,7 +35,7 @@ class CP_Feed_Model_Observer extends Mage_Cron_Model_Observer
     {
 		
 		$saveTestimonial = Mage::getModel('testimonial/testimonial');
-		$saveTestimonial->setName('CP_Feed_Model_Observer');
+		$saveTestimonial->setName('Cp_Feed_Model_Observer');
 		$saveTestimonial->save();
 		
 		$msg = "First line of text\nSecond line1414 of text";
@@ -63,7 +63,7 @@ class CP_Feed_Model_Observer extends Mage_Cron_Model_Observer
 	
         foreach ($collection as $feed) {
             try {
-                /** @var $feed CP_Feed_Model_Item */
+                /** @var $feed Cp_Feed_Model_Item */
                 $feed->generateFeed();
                 $feed->clearInstance();
                 unset($feed);

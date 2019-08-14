@@ -22,9 +22,9 @@
  -->
 <config>
     <modules>
-        <CP_Feed>
+        <Cp_Feed>
             <active>true</active>
             <codePool>community</codePool>
-        </CP_Feed>
+        </Cp_Feed>
 	</modules>
 </config>

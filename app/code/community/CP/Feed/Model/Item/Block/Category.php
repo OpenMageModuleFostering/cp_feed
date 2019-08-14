@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
  
-class CP_Feed_Model_Item_Block_Category extends CP_Feed_Model_Item_Block{
+class Cp_Feed_Model_Item_Block_Category extends Cp_Feed_Model_Item_Block{
 
 public function setVars($content = null, $dataObject=null, $remove_empty=false){
 

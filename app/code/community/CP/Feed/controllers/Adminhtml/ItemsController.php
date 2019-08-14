@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class CP_Feed_Adminhtml_ItemsController extends Mage_Adminhtml_Controller_Action
+class Cp_Feed_Adminhtml_ItemsController extends Mage_Adminhtml_Controller_Action
 {
     
     protected function _initAction()
@@ -42,7 +42,7 @@ class CP_Feed_Adminhtml_ItemsController extends Mage_Adminhtml_Controller_Action
 			  id smallint(6) NOT NULL auto_increment,
 			  vartimestamp varchar(255) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='CP Feed' AUTO_INCREMENT=1;");
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Cp Feed' AUTO_INCREMENT=1;");
             
             $write->query("INSERT INTO " . $prefix . "cp_feed(id,vartimestamp) values(1,'321')");
         }
@@ -774,13 +774,13 @@ class CP_Feed_Adminhtml_ItemsController extends Mage_Adminhtml_Controller_Action
             $iterator = $this->getRequest()->getParam('iterator');
             
             if ($code == 'product_type') {
-                $condition = CP_Feed_Block_Adminhtml_Items_Edit_Tab_Filter::getConditionSelectLight($iterator);
+                $condition = Cp_Feed_Block_Adminhtml_Items_Edit_Tab_Filter::getConditionSelectLight($iterator);
             } else {
-                $condition = CP_Feed_Block_Adminhtml_Items_Edit_Tab_Filter::getConditionSelect($iterator);
+                $condition = Cp_Feed_Block_Adminhtml_Items_Edit_Tab_Filter::getConditionSelect($iterator);
             }
             
             $this->getResponse()->setBody(Zend_Json::encode(array(
-                'attributevalue' => CP_Feed_Block_Adminhtml_Items_Edit_Tab_Filter::getAttributeValueField($code, $name, null, $store_id),
+                'attributevalue' => Cp_Feed_Block_Adminhtml_Items_Edit_Tab_Filter::getAttributeValueField($code, $name, null, $store_id),
                 'condition' => $condition,
                 'iterator' => $iterator
             )));

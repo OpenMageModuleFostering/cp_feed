@@ -18,8 +18,7 @@
  * @author      <<Niranjan Gondaliya>>    
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
- 
-class CP_Feed_Block_Adminhtml_Items_Grid_Renderer_Datetime extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Datetime{
+class Cp_Feed_Block_Adminhtml_Items_Grid_Renderer_Datetime extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Datetime{
 
 		
 

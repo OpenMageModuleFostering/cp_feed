@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class CP_Feed_Block_Adminhtml_Items_Grid extends Mage_Adminhtml_Block_Widget_Grid
+class Cp_Feed_Block_Adminhtml_Items_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
     
     public function __construct()
@@ -87,7 +87,7 @@ class CP_Feed_Block_Adminhtml_Items_Grid extends Mage_Adminhtml_Block_Widget_Gri
             
             'index' => 'filename',
             
-            'renderer' => 'CP_Feed_Block_Adminhtml_Items_Grid_Renderer_AccessUrl'
+            'renderer' => 'Cp_Feed_Block_Adminhtml_Items_Grid_Renderer_AccessUrl'
             
         ));
         
@@ -101,7 +101,7 @@ class CP_Feed_Block_Adminhtml_Items_Grid extends Mage_Adminhtml_Block_Widget_Gri
             
             'type' => 'datetime',
             
-            'renderer' => 'CP_Feed_Block_Adminhtml_Items_Grid_Renderer_Datetime'
+            'renderer' => 'Cp_Feed_Block_Adminhtml_Items_Grid_Renderer_Datetime'
             
         ));
         

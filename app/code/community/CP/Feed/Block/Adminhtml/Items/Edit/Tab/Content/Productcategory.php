@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
  
-class CP_Feed_Block_Adminhtml_Items_Edit_Tab_Content_Productcategory extends Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Categories
+class Cp_Feed_Block_Adminhtml_Items_Edit_Tab_Content_Productcategory extends Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Categories
 {
 	public function __construct() {
 		parent::__construct();

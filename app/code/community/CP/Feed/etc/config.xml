@@ -23,16 +23,16 @@
  
 <config>
     <modules>
-        <CP_Feed>
+        <Cp_Feed>
             <version>2.2.8</version>
-        </CP_Feed>
+        </Cp_Feed>
     </modules>
     <frontend>
         <routers>
             <cp_feed>
                 <use>standard</use>
                 <args>
-                    <module>CP_Feed</module>
+                    <module>Cp_Feed</module>
                     <frontName>feed</frontName>
                 </args>
             </cp_feed>
@@ -41,11 +41,11 @@
 		 <!-- <events>
 			<checkout_cart_product_add_after>
 				<observers>
-				   <CP_Feed_Model_Observer>
+				   <Cp_Feed_Model_Observer>
 					  <type>singleton</type>
-					  <class>CP_Feed_Model_Observer</class>
+					  <class>Cp_Feed_Model_Observer</class>
 					  <method>proccessFeeds</method>
-				   </CP_Feed_Model_Observer>
+				   </Cp_Feed_Model_Observer>
 				</observers>
 			</checkout_cart_product_add_after>
 		</events> -->
@@ -58,7 +58,7 @@
             <cp_feed>
                 <use>admin</use>
                 <args>
-                    <module>CP_Feed</module>
+                    <module>Cp_Feed</module>
                     <frontName>cp_feed</frontName>
                 </args>
             </cp_feed>
@@ -77,11 +77,11 @@
     <global>
         <models>
             <cp_feed>
-                <class>CP_Feed_Model</class>
+                <class>Cp_Feed_Model</class>
                 <resourceModel>cp_feed_mysql4</resourceModel>
             </cp_feed>
             <cp_feed_mysql4>
-                <class>CP_Feed_Model_Mysql4</class>
+                <class>Cp_Feed_Model_Mysql4</class>
                 <entities>
                     <item>
                         <table>cp_feed_entity</table>
@@ -91,19 +91,19 @@
 			
 			<cron>
                 <rewrite>
-                    <observer>CP_Feed_Model_Observer</observer>
+                    <observer>Cp_Feed_Model_Observer</observer>
                 </rewrite>
             </cron>
         </models>
         <blocks>
             <cp_feed>
-                <class>CP_Feed_Block</class>
+                <class>Cp_Feed_Block</class>
             </cp_feed>
         </blocks>
         <resources>
             <cp_feed_setup>
                 <setup>
-                    <module>CP_Feed</module>
+                    <module>Cp_Feed</module>
                 </setup>
                 <connection>
                     <use>core_setup</use>
@@ -122,7 +122,7 @@
         </resources>
         <helpers>
             <cp_feed>
-                <class>CP_Feed_Helper</class>
+                <class>Cp_Feed_Helper</class>
             </cp_feed>
         </helpers>
     </global>

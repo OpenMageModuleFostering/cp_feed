@@ -18,8 +18,8 @@
  * @author      <<Niranjan Gondaliya>>    
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-
-class CP_Feed_Helper_Data extends Mage_Core_Helper_Abstract{
+ 
+class Cp_Feed_Helper_Data extends Mage_Core_Helper_Abstract{
 	
     public function getConfigData($node){
 		return Mage::getStoreConfig('cp_feed/'.$node);

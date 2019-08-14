@@ -19,7 +19,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class CP_Feed_Model_Item_Block extends Varien_Object
+class Cp_Feed_Model_Item_Block extends Varien_Object
 {
 	protected $content = '';
 	protected $pattern = '/\\{\\{block\b(.*?)\\}\\}(.*)\\{\\{\\/block\\}\\}/is';
@@ -31,7 +31,7 @@ class CP_Feed_Model_Item_Block extends Varien_Object
 	public function getFeed(){
 		return $this->feed;
 	}
-	public function setFeed(CP_Feed_Model_Item $feed){
+	public function setFeed(Cp_Feed_Model_Item $feed){
 		$this->feed = $feed;
 		return $this;
 	}
@@ -41,7 +41,7 @@ class CP_Feed_Model_Item_Block extends Varien_Object
     	
     	extract($vars);
     	
-    	if($feed instanceof CP_Feed_Model_Item){
+    	if($feed instanceof Cp_Feed_Model_Item){
     		
     		$this->feed	= $feed;
     		
@@ -66,7 +66,7 @@ class CP_Feed_Model_Item_Block extends Varien_Object
         	}
         
         }else{
-        	throw new Exception('Feed must be instane of "CP_Feed_Model_Item"');
+        	throw new Exception('Feed must be instane of "Cp_Feed_Model_Item"');
         }
     }
     
@@ -134,7 +134,7 @@ class CP_Feed_Model_Item_Block extends Varien_Object
 	        			
 	        			$block = new $modelClassName(array('content'=>$content, 'feed'=>$this->feed, 'is_xml'=>1));
 	        			
-	        			if(false == ($block instanceof CP_Feed_Model_Item_Block)){
+	        			if(false == ($block instanceof Cp_Feed_Model_Item_Block)){
 	        				
 	        				$block = null;
 	        				
@@ -195,7 +195,7 @@ class CP_Feed_Model_Item_Block extends Varien_Object
 		$this->content = str_replace('|rquote|', '>', $this->content);
 		
     	
-    	return $this->setVars($this->content, null, (get_class($this) == 'CP_Feed_Model_Item_Block'));
+    	return $this->setVars($this->content, null, (get_class($this) == 'Cp_Feed_Model_Item_Block'));
     	
     }
     
