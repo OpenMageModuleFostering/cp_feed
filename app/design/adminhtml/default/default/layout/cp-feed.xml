@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+ <!-- 
+ /**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    Commerce Pundit Technologies
+ * @package     CP_Feed
+ * @copyright   Copyright (c) 2016 Commerce Pundit Technologies. (http://www.commercepundit.com)    
+ * @author   <<Niranjan Gondaliya>>    
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+ 
+<layout version="1.0">
+    <cp_feed_adminhtml_items_index>
+        <reference name="content">
+            <block type="cp_feed/adminhtml_items" name="cp_feed.admin.items" />
+        </reference>
+    </cp_feed_adminhtml_items_index>
+    <cp_feed_adminhtml_attributes_index>
+        <reference name="content">
+            <block type="cp_feed/adminhtml_attributes" name="cp_feed.admin.attributes" />
+        </reference>
+    </cp_feed_adminhtml_attributes_index>
+    <cp_feed_adminhtml_attributes_edit>
+    	<reference name="head">
+    		<action method="addItem"><type>skin_css</type><name>cp/feed.css</name><params>media="screen, projection"</params></action>
+    	</reference>
+    </cp_feed_adminhtml_attributes_edit>
+    <cp_feed_adminhtml_attributes_new>
+    	<reference name="head">
+    		<action method="addItem"><type>skin_css</type><name>cp/feed.css</name><params>media="screen, projection"</params></action>
+    	</reference>
+    </cp_feed_adminhtml_attributes_new>    
+    <cp_feed_adminhtml_items_edit>
+        <reference name="head">
+    		<action method="addJs"><script>lib/flex.js</script></action>
+    		<action method="addJs"><script>lib/FABridge.js</script></action>
+    		<action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
+    		<action method="addJs"><script>mage/adminhtml/uploader.js</script></action>
+			<action method="addJs"><script>cpfeed/jquery-1.8.2.min.js</script></action>
+			<action method="addItem"><type>skin_css</type><name>cp/cpfeed.css</name><params/></action>
+		</reference>    	
+    </cp_feed_adminhtml_items_edit>
+    <cp_feed_adminhtml_items_new>
+        <reference name="head">
+    		<action method="addJs"><script>lib/flex.js</script></action>
+    		<action method="addJs"><script>lib/FABridge.js</script></action>
+    		<action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
+    		<action method="addJs"><script>mage/adminhtml/uploader.js</script></action>
+			<action method="addJs"><script>cpfeed/jquery-1.8.2.min.js</script></action>
+			<action method="addItem"><type>skin_css</type><name>cp/cpfeed.css</name><params/></action>
+    	</reference>
+    </cp_feed_adminhtml_items_new>
+</layout>

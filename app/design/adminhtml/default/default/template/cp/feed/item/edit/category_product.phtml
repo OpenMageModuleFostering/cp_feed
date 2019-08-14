@@ -1,0 +1,79 @@
+<div style="" id="cp_feed_tabs_content_section_content"><div class="entry-edit">
+    <div class="entry-edit-head">
+    <h4 class="icon-head head-edit-form fieldset-legend">Product Category</h4>
+    </div>
+    <div class="fieldset " id="content_fieldset">
+    <div style="clear:both" class="grid">
+<?php
+$product_categories = Mage::getModel('cp_feed/item')->load($this->getRequest()->getParam('id'));
+$categoryids        = $myArray = explode(',', $product_categories->getProductCategories());
+
+$rootcatId  = Mage::app()->getStore("default")->getRootCategoryId();
+$categories = Mage::getModel('catalog/category')->getCategories($rootcatId);
+function get_categories($categories)
+{
+    $array = '<ul class="none" id="outer_ul">';
+    foreach ($categories as $category) {
+        $cat = Mage::getModel('catalog/category')->load($category->getId());
+        if ($category->hasChildren()) {
+            
+            $array .= '<li>' . '<input type="checkbox" id="' . $category->getId() . '" name="product_categories[]" class="categorychkbx" value="' . $category->getId() . '"><label class="sub_element">' . $category->getName() . "</label> <em id='parent'></em>";
+            
+        } else {
+            
+            $array .= '<li>' . '<input type="checkbox" id="' . $category->getId() . '" name="product_categories[]" class="categorychkbx" value="' . $category->getId() . '"><label class="sub_element">' . $category->getName() . "</label> <em id='child'></em>";
+            
+        }
+        
+        
+        if ($category->hasChildren()) {
+            $children = Mage::getModel('catalog/category')->getCategories($category->getId());
+            $array .= get_categories($children);
+        }
+        
+        $array .= '</li>';
+    }
+    return $array . '</ul>';
+}
+echo get_categories($categories);
+?>
+   </div>
+    </div>
+</div>
+</div>
+<script>
+<?php foreach ($categoryids as $catval) { ?>
+   jQuery("#<?php echo $catval; ?>").attr ( "checked" ,"checked" );
+<?php } ?>
+</script>
+
+<script>
+jQuery(document).ready(function(){
+  jQuery('#outer_ul ul').css("display","none");
+  jQuery("#parent").live("click",function(event){
+  jQuery(".block").removeAttr("style");
+  jQuery(".block").removeAttr("style");
+  jQuery(".col-left").removeAttr("style");
+  if(false == jQuery(this).next().is(':visible')) {          
+        jQuery(".block").removeAttr("style");
+        jQuery(".block").removeAttr("style");
+        jQuery(".col-left").removeAttr("style");
+        jQuery(this).closest('ul').find('ul').slideUp(300);
+        jQuery(this).removeAttr("class");
+        jQuery(this).closest('ul').find('em').css("background-position",'0 9px');
+    }
+    jQuery(this).toggleClass('expanded');  
+    jQuery(this).next().slideToggle(300);    
+    if(jQuery(this).attr("class") == "expanded") {
+        jQuery(this).css("background-position",'0 -11px');
+    } else {
+        jQuery(this).css("background-position",'0 9px');
+    }
+    
+});
+ 
+jQuery(".current").show();
+jQuery(".current").prev().addClass("expanded");
+jQuery('.current').prev().css("background-position",'0 -11px');
+});
+</script>

@@ -1,0 +1,20 @@
+#parent {
+  background:url('images/plus.png') no-repeat scroll 0 9px;
+  float: right;
+  height: 21px;
+  width: 19px;
+}
+#outer_ul {
+  padding-left:6px;
+  width: auto;
+}
+#outer_ul li {
+  margin: 0 0 0 3px;
+  padding: 0 0 0 13px;
+  line-height: 25px;
+  background: url("../images/arrow_item.gif") 0 12px no-repeat;
+  border-bottom: 1px solid #E0E0E0;
+}
+.categorychkbx{
+		margin-right: 5px;
+}

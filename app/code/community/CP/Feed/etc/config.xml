@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+ <!-- 
+ /**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    Commerce Pundit Technologies
+ * @package     CP_Feed
+ * @copyright   Copyright (c) 2016 Commerce Pundit Technologies. (http://www.commercepundit.com)    
+ * @author   <<Niranjan Gondaliya>>    
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+ 
+<config>
+    <modules>
+        <CP_Feed>
+            <version>2.2.8</version>
+        </CP_Feed>
+    </modules>
+    <frontend>
+        <routers>
+            <cp_feed>
+                <use>standard</use>
+                <args>
+                    <module>CP_Feed</module>
+                    <frontName>feed</frontName>
+                </args>
+            </cp_feed>
+        </routers>
+		
+		 <!-- <events>
+			<checkout_cart_product_add_after>
+				<observers>
+				   <CP_Feed_Model_Observer>
+					  <type>singleton</type>
+					  <class>CP_Feed_Model_Observer</class>
+					  <method>proccessFeeds</method>
+				   </CP_Feed_Model_Observer>
+				</observers>
+			</checkout_cart_product_add_after>
+		</events> -->
+	  
+	 
+	  
+    </frontend>
+    <admin>
+        <routers>
+            <cp_feed>
+                <use>admin</use>
+                <args>
+                    <module>CP_Feed</module>
+                    <frontName>cp_feed</frontName>
+                </args>
+            </cp_feed>
+        </routers>
+    </admin>
+    <adminhtml>
+
+        <layout>
+            <updates>
+                <cp_feed>
+                    <file>cp-feed.xml</file>
+                </cp_feed>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <models>
+            <cp_feed>
+                <class>CP_Feed_Model</class>
+                <resourceModel>cp_feed_mysql4</resourceModel>
+            </cp_feed>
+            <cp_feed_mysql4>
+                <class>CP_Feed_Model_Mysql4</class>
+                <entities>
+                    <item>
+                        <table>cp_feed_entity</table>
+                    </item>
+                </entities>
+            </cp_feed_mysql4>
+			
+			<cron>
+                <rewrite>
+                    <observer>CP_Feed_Model_Observer</observer>
+                </rewrite>
+            </cron>
+        </models>
+        <blocks>
+            <cp_feed>
+                <class>CP_Feed_Block</class>
+            </cp_feed>
+        </blocks>
+        <resources>
+            <cp_feed_setup>
+                <setup>
+                    <module>CP_Feed</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </cp_feed_setup>
+            <cp_feed_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </cp_feed_write>
+            <cp_feed_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </cp_feed_read>
+        </resources>
+        <helpers>
+            <cp_feed>
+                <class>CP_Feed_Helper</class>
+            </cp_feed>
+        </helpers>
+    </global>
+     <!-- <crontab>
+        <jobs>
+            <cp_feed_generate_all>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>cp_feed/observer::proccessFeeds</model>
+                </run>
+            </cp_feed_generate_all>
+        </jobs> 
+    </crontab> --> 
+	
+	 <crontab>
+        <jobs>
+            <cp_feed_generate_all>
+                <schedule>
+                    <cron_expr>* * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>cp_feed/observer::proccessFeeds</model>
+                </run>
+            </cp_feed_generate_all>
+        </jobs> 
+	  </crontab>
+</config>
